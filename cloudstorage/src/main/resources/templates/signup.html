@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Sign Up</title>
+
+  <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/bootstrap.min.css}">
+  <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}">
+
+</head>
+<body class="p-3 mb-2 bg-light text-black">
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+  <h1 class="display-5">Sign Up</h1>
+
+  <form action="#" th:action="@{/signup}" method="POST">
+    <div id="success-msg" th:if="${signupSuccess}" class="alert alert-dark">
+      You successfully signed up! Please continue to the <a>login</a> page.
+    </div>
+    <div class="alert alert-danger" th:if="${signupError}">
+      <span th:text="${signupError}"></span>
+    </div>
+
+      <input type="text" name="firstName" class="fadeIn second" id="inputFirstName" placeholder="Enter First name" maxlength="20" required>
+
+      <input type="text" name="lastName" class="fadeIn second" id="inputLastName" placeholder="Enter Last name" maxlength="20" required>
+
+      <input type="text" class="fadeIn second" name="username" id="inputUsername" placeholder="Enter Username" maxlength="20" required>
+
+      <input type="password" class="fadeIn second" name="password" id="inputPassword" placeholder="Enter Password" maxlength="20" required>
+
+    <button type="submit" class="btn btn-primary" id="login-button" style="margin-top: 15px; margin-bottom: 20px">Sign Up</button>
+  </form>
+
+    <div id="formFooter" >
+    <label><a th:href="@{/login}" class="underlineHover">Back to Login<</a></label>
+  </div>
+</div>
+</div>
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script th:href="@{/js/bootstrap.min.js}"></script>
+<script th:href="@{/js/jquery-slim.min.js}"></script>
+</body>
+</html>
